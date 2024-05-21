@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>IOKitPersonalities</key>
-	<dict/>
-	<key>OSBundleLibraries</key>
-	<dict/>
-</dict>
+    <dict>
+        <key>CFBundleIdentifier</key>
+        <string>com.nhsystems.WaveLinkIO</string>
+        <key>CFBundleVersion</key>
+        <string>1.0</string>
+        <key>CFBundleExecutable</key>
+        <string>WaveLinkIO</string>
+        <key>IOKitPersonalities</key>
+        <dict>
+            <key>VirtualAudioDevice</key>
+            <dict>
+                <key>CFBundleIdentifier</key>
+                <string>com.nhsystems.WaveLinkIO</string>
+                <key>IOClass</key>
+                <string>VirtualAudioDevice</string>
+                <key>IOMatchCategory</key>
+                <string>IOAudioDevice</string>
+                <key>IOProviderClass</key>
+                <string>IOResources</string>
+            </dict>
+        </dict>
+        <key>OSBundleLibraries</key>
+        <dict>
+            <key>com.apple.iokit.IOAudioFamily</key>
+            <string>1.0</string>
+            <key>com.apple.kpi.iokit</key>
+            <string>8.0</string>
+            <key>com.apple.kpi.libkern</key>
+            <string>8.0</string>
+        </dict>
+        <key>OSBundleRequired</key>
+        <string>Root</string>
+    </dict>
 </plist>

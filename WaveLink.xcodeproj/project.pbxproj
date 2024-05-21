@@ -11,10 +11,9 @@
 		38AAD1932BFB9A910039F5D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AAD1922BFB9A910039F5D6 /* ContentView.swift */; };
 		38AAD1952BFB9A930039F5D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38AAD1942BFB9A930039F5D6 /* Assets.xcassets */; };
 		38AAD1982BFB9A930039F5D6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38AAD1972BFB9A930039F5D6 /* Preview Assets.xcassets */; };
-		38AAD1D22BFB9BB30039F5D6 /* WaveLinkIO.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 38AAD1D12BFB9BB30039F5D6 /* WaveLinkIO.hpp */; };
-		38AAD1D42BFB9BB30039F5D6 /* WaveLinkIO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38AAD1D32BFB9BB30039F5D6 /* WaveLinkIO.cpp */; };
-		38AAD1DA2BFB9CFE0039F5D6 /* VirtualAudioDevice.iig in Sources */ = {isa = PBXBuildFile; fileRef = 38AAD1D92BFB9CFE0039F5D6 /* VirtualAudioDevice.iig */; };
-		38AAD1DC2BFB9DC30039F5D6 /* VirtualAudioEngine.iig in Sources */ = {isa = PBXBuildFile; fileRef = 38AAD1DB2BFB9DAE0039F5D6 /* VirtualAudioEngine.iig */; };
+		38AAD1E92BFC82A70039F5D6 /* WaveLinkIO.c in Sources */ = {isa = PBXBuildFile; fileRef = 38AAD1E82BFC82A70039F5D6 /* WaveLinkIO.c */; };
+		38AAD1F02BFC8A0A0039F5D6 /* VirtualAudioDevice.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 38AAD1EF2BFC8A0A0039F5D6 /* VirtualAudioDevice.hpp */; };
+		38AAD1F12BFC8A0A0039F5D6 /* VirtualAudioDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38AAD1EE2BFC8A0A0039F5D6 /* VirtualAudioDevice.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,12 +23,11 @@
 		38AAD1942BFB9A930039F5D6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		38AAD1972BFB9A930039F5D6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		38AAD1992BFB9A930039F5D6 /* WaveLink.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WaveLink.entitlements; sourceTree = "<group>"; };
-		38AAD1CF2BFB9BB30039F5D6 /* WaveLinkIO.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaveLinkIO.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		38AAD1D12BFB9BB30039F5D6 /* WaveLinkIO.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = WaveLinkIO.hpp; sourceTree = "<group>"; };
-		38AAD1D32BFB9BB30039F5D6 /* WaveLinkIO.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = WaveLinkIO.cpp; sourceTree = "<group>"; };
-		38AAD1D52BFB9BB30039F5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38AAD1D92BFB9CFE0039F5D6 /* VirtualAudioDevice.iig */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.iig; path = VirtualAudioDevice.iig; sourceTree = "<group>"; };
-		38AAD1DB2BFB9DAE0039F5D6 /* VirtualAudioEngine.iig */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.iig; path = VirtualAudioEngine.iig; sourceTree = "<group>"; };
+		38AAD1E62BFC82A70039F5D6 /* WaveLinkIO.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaveLinkIO.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		38AAD1E82BFC82A70039F5D6 /* WaveLinkIO.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = WaveLinkIO.c; sourceTree = "<group>"; };
+		38AAD1EA2BFC82A70039F5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38AAD1EE2BFC8A0A0039F5D6 /* VirtualAudioDevice.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VirtualAudioDevice.cpp; sourceTree = "<group>"; };
+		38AAD1EF2BFC8A0A0039F5D6 /* VirtualAudioDevice.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VirtualAudioDevice.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +38,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38AAD1CC2BFB9BB30039F5D6 /* Frameworks */ = {
+		38AAD1E32BFC82A70039F5D6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -54,7 +52,7 @@
 			isa = PBXGroup;
 			children = (
 				38AAD18F2BFB9A910039F5D6 /* WaveLink */,
-				38AAD1D02BFB9BB30039F5D6 /* WaveLinkIO */,
+				38AAD1E72BFC82A70039F5D6 /* WaveLinkIO */,
 				38AAD18E2BFB9A910039F5D6 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -63,7 +61,7 @@
 			isa = PBXGroup;
 			children = (
 				38AAD18D2BFB9A910039F5D6 /* WaveLink.app */,
-				38AAD1CF2BFB9BB30039F5D6 /* WaveLinkIO.kext */,
+				38AAD1E62BFC82A70039F5D6 /* WaveLinkIO.kext */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -88,14 +86,13 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		38AAD1D02BFB9BB30039F5D6 /* WaveLinkIO */ = {
+		38AAD1E72BFC82A70039F5D6 /* WaveLinkIO */ = {
 			isa = PBXGroup;
 			children = (
-				38AAD1D12BFB9BB30039F5D6 /* WaveLinkIO.hpp */,
-				38AAD1D32BFB9BB30039F5D6 /* WaveLinkIO.cpp */,
-				38AAD1D52BFB9BB30039F5D6 /* Info.plist */,
-				38AAD1D92BFB9CFE0039F5D6 /* VirtualAudioDevice.iig */,
-				38AAD1DB2BFB9DAE0039F5D6 /* VirtualAudioEngine.iig */,
+				38AAD1E82BFC82A70039F5D6 /* WaveLinkIO.c */,
+				38AAD1EA2BFC82A70039F5D6 /* Info.plist */,
+				38AAD1EE2BFC8A0A0039F5D6 /* VirtualAudioDevice.cpp */,
+				38AAD1EF2BFC8A0A0039F5D6 /* VirtualAudioDevice.hpp */,
 			);
 			path = WaveLinkIO;
 			sourceTree = "<group>";
@@ -103,11 +100,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		38AAD1CA2BFB9BB30039F5D6 /* Headers */ = {
+		38AAD1E12BFC82A70039F5D6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38AAD1D22BFB9BB30039F5D6 /* WaveLinkIO.hpp in Headers */,
+				38AAD1F02BFC8A0A0039F5D6 /* VirtualAudioDevice.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -131,14 +128,14 @@
 			productReference = 38AAD18D2BFB9A910039F5D6 /* WaveLink.app */;
 			productType = "com.apple.product-type.application";
 		};
-		38AAD1CE2BFB9BB30039F5D6 /* WaveLinkIO */ = {
+		38AAD1E52BFC82A70039F5D6 /* WaveLinkIO */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38AAD1D62BFB9BB30039F5D6 /* Build configuration list for PBXNativeTarget "WaveLinkIO" */;
+			buildConfigurationList = 38AAD1EB2BFC82A70039F5D6 /* Build configuration list for PBXNativeTarget "WaveLinkIO" */;
 			buildPhases = (
-				38AAD1CA2BFB9BB30039F5D6 /* Headers */,
-				38AAD1CB2BFB9BB30039F5D6 /* Sources */,
-				38AAD1CC2BFB9BB30039F5D6 /* Frameworks */,
-				38AAD1CD2BFB9BB30039F5D6 /* Resources */,
+				38AAD1E12BFC82A70039F5D6 /* Headers */,
+				38AAD1E22BFC82A70039F5D6 /* Sources */,
+				38AAD1E32BFC82A70039F5D6 /* Frameworks */,
+				38AAD1E42BFC82A70039F5D6 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -146,7 +143,7 @@
 			);
 			name = WaveLinkIO;
 			productName = WaveLinkIO;
-			productReference = 38AAD1CF2BFB9BB30039F5D6 /* WaveLinkIO.kext */;
+			productReference = 38AAD1E62BFC82A70039F5D6 /* WaveLinkIO.kext */;
 			productType = "com.apple.product-type.kernel-extension";
 		};
 /* End PBXNativeTarget section */
@@ -162,7 +159,7 @@
 					38AAD18C2BFB9A910039F5D6 = {
 						CreatedOnToolsVersion = 15.3;
 					};
-					38AAD1CE2BFB9BB30039F5D6 = {
+					38AAD1E52BFC82A70039F5D6 = {
 						CreatedOnToolsVersion = 15.3;
 					};
 				};
@@ -181,7 +178,7 @@
 			projectRoot = "";
 			targets = (
 				38AAD18C2BFB9A910039F5D6 /* WaveLink */,
-				38AAD1CE2BFB9BB30039F5D6 /* WaveLinkIO */,
+				38AAD1E52BFC82A70039F5D6 /* WaveLinkIO */,
 			);
 		};
 /* End PBXProject section */
@@ -196,7 +193,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38AAD1CD2BFB9BB30039F5D6 /* Resources */ = {
+		38AAD1E42BFC82A70039F5D6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -215,13 +212,12 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		38AAD1CB2BFB9BB30039F5D6 /* Sources */ = {
+		38AAD1E22BFC82A70039F5D6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38AAD1DA2BFB9CFE0039F5D6 /* VirtualAudioDevice.iig in Sources */,
-				38AAD1D42BFB9BB30039F5D6 /* WaveLinkIO.cpp in Sources */,
-				38AAD1DC2BFB9DC30039F5D6 /* VirtualAudioEngine.iig in Sources */,
+				38AAD1F12BFC8A0A0039F5D6 /* VirtualAudioDevice.cpp in Sources */,
+				38AAD1E92BFC82A70039F5D6 /* WaveLinkIO.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,13 +396,12 @@
 			};
 			name = Release;
 		};
-		38AAD1D72BFB9BB30039F5D6 /* Debug */ = {
+		38AAD1EC2BFC82A70039F5D6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.0.0d1;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W93RMB5CDG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WaveLinkIO/Info.plist;
@@ -414,6 +409,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.0;
 				MODULE_NAME = com.nhsystems.WaveLinkIO;
+				MODULE_START = WaveLinkIO_start;
+				MODULE_STOP = WaveLinkIO_stop;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nhsystems.WaveLinkIO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,13 +420,12 @@
 			};
 			name = Debug;
 		};
-		38AAD1D82BFB9BB30039F5D6 /* Release */ = {
+		38AAD1ED2BFC82A70039F5D6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO;
 				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1.0.0d1;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W93RMB5CDG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WaveLinkIO/Info.plist;
@@ -437,6 +433,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				MARKETING_VERSION = 1.0;
 				MODULE_NAME = com.nhsystems.WaveLinkIO;
+				MODULE_START = WaveLinkIO_start;
+				MODULE_STOP = WaveLinkIO_stop;
 				MODULE_VERSION = 1.0.0d1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nhsystems.WaveLinkIO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -467,11 +465,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		38AAD1D62BFB9BB30039F5D6 /* Build configuration list for PBXNativeTarget "WaveLinkIO" */ = {
+		38AAD1EB2BFC82A70039F5D6 /* Build configuration list for PBXNativeTarget "WaveLinkIO" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				38AAD1D72BFB9BB30039F5D6 /* Debug */,
-				38AAD1D82BFB9BB30039F5D6 /* Release */,
+				38AAD1EC2BFC82A70039F5D6 /* Debug */,
+				38AAD1ED2BFC82A70039F5D6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
