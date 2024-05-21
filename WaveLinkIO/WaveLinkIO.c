@@ -1,8 +1,24 @@
 //
 //  WaveLinkIO.c
-//  WaveLinkIO
+//  WaveLinkIO Kernel
 //
-//  Created by NH on 21.05.24.
+//  Copyright (c) 2024 NH. All rights reserved.
+//
+//  @LICENSE_HEADER_START@
+//
+//  Licensed under the Apache License, Version 2.0 (the "License");
+//  you may not use this file except in compliance with the License.
+//  You may obtain a copy of the License at
+//
+//       http://www.apache.org/licenses/LICENSE-2.0
+//
+//  Unless required by applicable law or agreed to in writing, software
+//  distributed under the License is distributed on an "AS IS" BASIS,
+//  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+//  See the License for the specific language governing permissions and
+//  limitations under the License.
+//
+//  @LICENSE_HEADER_END@
 //
 
 /**
@@ -12,13 +28,7 @@
 
 #include <mach/mach_types.h>
 #include <IOKit/IOLib.h>
-#include <IOKit/IOService.h>
-
-class VirtualAudioDevice;
-extern "C" {
-    kern_return_t VirtualAudioDevice_start(IOService *provider);
-    void VirtualAudioDevice_stop(IOService *provider);
-}
+#include "VirtualAudioDeviceWrapper.hpp"
 
 /**
  * @brief The start function.
@@ -28,10 +38,17 @@ extern "C" {
  */
 kern_return_t WaveLinkIO_start(kmod_info_t * ki, void *d) {
     IOLog("WaveLinkIO: Loading\n");
-    IOService *service = IOService::waitForService(IOService::serviceMatching("IOResources"));
+    struct IOService *service = waitForIOService("IOResources");
     if (service) {
-        return VirtualAudioDevice_start(service);
+        kern_return_t result = VirtualAudioDevice_start(service);
+        if (result == KERN_SUCCESS) {
+            IOLog("WaveLinkIO: Successfully loaded\n");
+        } else {
+            IOLog("WaveLinkIO: Failed to start VirtualAudioDevice\n");
+        }
+        return result;
     }
+    IOLog("WaveLinkIO: IOResources service not found\n");
     return KERN_FAILURE;
 }
 
@@ -43,9 +60,12 @@ kern_return_t WaveLinkIO_start(kmod_info_t * ki, void *d) {
  */
 kern_return_t WaveLinkIO_stop(kmod_info_t *ki, void *d) {
     IOLog("WaveLinkIO: Unloading\n");
-    IOService *service = IOService::waitForService(IOService::serviceMatching("IOResources"));
+    struct IOService *service = waitForIOService("IOResources");
     if (service) {
         VirtualAudioDevice_stop(service);
+        IOLog("WaveLinkIO: Successfully unloaded\n");
+    } else {
+        IOLog("WaveLinkIO: IOResources service not found\n");
     }
     return KERN_SUCCESS;
 }
