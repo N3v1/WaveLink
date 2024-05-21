@@ -2,12 +2,12 @@
 //  WaveLinkIO.c
 //  WaveLinkIO
 //
-//  Created by Nevio Hirani on 21.05.24.
+//  Created by NH on 21.05.24.
 //
 
 #include <mach/mach_types.h>
 #include <IOKit/IOLib.h>
-#include <IOKit/IOService.h>
+#include <IOKit/IOService.h> // problem
 
 class VirtualAudioDevice;
 extern "C" {
@@ -15,7 +15,6 @@ extern "C" {
     void VirtualAudioDevice_stop(IOService *provider);
 }
 
-// The start function
 kern_return_t WaveLinkIO_start(kmod_info_t * ki, void *d) {
     IOLog("WaveLinkIO: Loading\n");
     IOService *service = IOService::waitForService(IOService::serviceMatching("IOResources"));
@@ -25,10 +24,6 @@ kern_return_t WaveLinkIO_start(kmod_info_t * ki, void *d) {
     return KERN_FAILURE;
 }
 
-/// The stop function
-/// - Parameters:
-///   - ki: <#ki description#>
-///   - d: <#d description#>
 kern_return_t WaveLinkIO_stop(kmod_info_t *ki, void *d) {
     IOLog("WaveLinkIO: Unloading\n");
     IOService *service = IOService::waitForService(IOService::serviceMatching("IOResources"));
