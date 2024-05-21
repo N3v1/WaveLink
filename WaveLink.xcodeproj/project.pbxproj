@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3856FC302BFD001500CD5CE2 /* VirtualAudioDeviceWrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 3856FC2F2BFD001500CD5CE2 /* VirtualAudioDeviceWrapper.cpp */; };
 		3856FC322BFD00A100CD5CE2 /* VirtualAudioDeviceWrapper.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3856FC312BFD00A100CD5CE2 /* VirtualAudioDeviceWrapper.hpp */; };
+		3856FC342BFD07C800CD5CE2 /* WLAudioEngine.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 3856FC332BFD07C800CD5CE2 /* WLAudioEngine.hpp */; };
 		38AAD1912BFB9A910039F5D6 /* WaveLinkApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AAD1902BFB9A910039F5D6 /* WaveLinkApp.swift */; };
 		38AAD1932BFB9A910039F5D6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AAD1922BFB9A910039F5D6 /* ContentView.swift */; };
 		38AAD1952BFB9A930039F5D6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38AAD1942BFB9A930039F5D6 /* Assets.xcassets */; };
@@ -51,6 +52,7 @@
 /* Begin PBXFileReference section */
 		3856FC2F2BFD001500CD5CE2 /* VirtualAudioDeviceWrapper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VirtualAudioDeviceWrapper.cpp; sourceTree = "<group>"; };
 		3856FC312BFD00A100CD5CE2 /* VirtualAudioDeviceWrapper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VirtualAudioDeviceWrapper.hpp; sourceTree = "<group>"; };
+		3856FC332BFD07C800CD5CE2 /* WLAudioEngine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = WLAudioEngine.hpp; sourceTree = "<group>"; };
 		38AAD18D2BFB9A910039F5D6 /* WaveLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaveLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		38AAD1902BFB9A910039F5D6 /* WaveLinkApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaveLinkApp.swift; sourceTree = "<group>"; };
 		38AAD1922BFB9A910039F5D6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -92,6 +94,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3856FC352BFD1AFB00CD5CE2 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				38AAD1EF2BFC8A0A0039F5D6 /* VirtualAudioDevice.hpp */,
+				3856FC332BFD07C800CD5CE2 /* WLAudioEngine.hpp */,
+				3856FC312BFD00A100CD5CE2 /* VirtualAudioDeviceWrapper.hpp */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
 		38AAD1842BFB9A910039F5D6 = {
 			isa = PBXGroup;
 			children = (
@@ -134,12 +146,11 @@
 		38AAD1E72BFC82A70039F5D6 /* WaveLinkIO */ = {
 			isa = PBXGroup;
 			children = (
+				3856FC352BFD1AFB00CD5CE2 /* include */,
 				38AAD1E82BFC82A70039F5D6 /* WaveLinkIO.c */,
 				38AAD1EE2BFC8A0A0039F5D6 /* VirtualAudioDevice.cpp */,
-				38AAD1EF2BFC8A0A0039F5D6 /* VirtualAudioDevice.hpp */,
-				38AAD1EA2BFC82A70039F5D6 /* Info.plist */,
 				3856FC2F2BFD001500CD5CE2 /* VirtualAudioDeviceWrapper.cpp */,
-				3856FC312BFD00A100CD5CE2 /* VirtualAudioDeviceWrapper.hpp */,
+				38AAD1EA2BFC82A70039F5D6 /* Info.plist */,
 			);
 			path = WaveLinkIO;
 			sourceTree = "<group>";
@@ -164,6 +175,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38AAD1F02BFC8A0A0039F5D6 /* VirtualAudioDevice.hpp in Headers */,
+				3856FC342BFD07C800CD5CE2 /* WLAudioEngine.hpp in Headers */,
 				3856FC322BFD00A100CD5CE2 /* VirtualAudioDeviceWrapper.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
