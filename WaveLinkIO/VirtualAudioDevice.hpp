@@ -35,6 +35,7 @@
 
 #include <IOKit/audio/IOAudioDevice.h>
 #include <IOKit/audio/IOAudioEngine.h>
+#include <IOKit/audio/IOAudioStream.h>
 
 /**
  * @class VirtualAudioDevice
@@ -113,7 +114,7 @@ public:
      *
      * @return kIOReturnSuccess if the engine state was reset successfully, an error code otherwise.
      */
-    virtual IOReturn resetAudioEngineState() override;
+    virtual IOReturn resetAudioEngineState() /*override*/;
 
     /**
      * @brief Gets the current sample frame.
@@ -136,7 +137,7 @@ public:
      * @param streamFormat The format of the audio stream.
      * @return kIOReturnSuccess if the samples were clipped successfully, an error code otherwise.
      */
-    virtual IOReturn clipOutputSamples(const void *mixBuf, void *sampleBuf, UInt32 firstSampleFrame, UInt32 numSampleFrames, const IOAudioStreamFormat *streamFormat) override;
+    virtual IOReturn clipOutputSamples(const void *mixBuf, void *sampleBuf, UInt32 firstSampleFrame, UInt32 numSampleFrames, const IOAudioStreamFormat *streamFormat) /*override*/;
 
     /**
      * @brief Converts the input samples.
@@ -150,7 +151,10 @@ public:
      * @param streamFormat The format of the audio stream.
      * @return kIOReturnSuccess if the samples were converted successfully, an error code otherwise.
      */
-    virtual IOReturn convertInputSamples(const void *sampleBuf, void *destBuf, UInt32 firstSampleFrame, UInt32 numSampleFrames, const IOAudioStreamFormat *streamFormat) override;
+    virtual IOReturn convertInputSamples(const void *sampleBuf, void *destBuf, UInt32 firstSampleFrame, UInt32 numSampleFrames, const IOAudioStreamFormat *streamFormat) /*override*/;
 };
+
+extern "C" kern_return_t VirtualAudioDevice_start(IOService *provider);
+extern "C" void VirtualAudioDevice_stop(IOService *provider);
 
 #endif // VIRTUALAUDIODEVICE_HPP

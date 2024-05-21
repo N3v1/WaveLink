@@ -38,7 +38,7 @@ bool VirtualAudioDevice::initHardware(IOService *provider) {
     }
 
     VirtualAudioEngine *audioEngine = new VirtualAudioEngine;
-    if (!audioEngine || !audioEngine->init(NULL)) {
+    if (!audioEngine || !audioEngine->init(nullptr)) {
         if (audioEngine) {
             audioEngine->release();
         }
@@ -61,54 +61,96 @@ bool VirtualAudioEngine::initHardware(IOService *provider) {
         return false;
     }
 
+    // Define the audio stream format for 16 channels
+    IOAudioStreamFormat format = {
+        .fNumChannels = 16,
+        .fSampleFormat = kIOAudioStreamSampleFormatLinearPCM,
+        .fNumericRepresentation = kIOAudioStreamNumericRepresentationSignedInt,
+        .fBitDepth = 16,
+        .fBitWidth = 16,
+        .fAlignment = kIOAudioStreamAlignmentHighByte,
+        .fByteOrder = kIOAudioStreamByteOrderBigEndian,
+        .fIsMixable = true,
+        .fDriverTag = 0
+    };
+
     IOAudioSampleRate sampleRate;
     sampleRate.whole = 44100;
     sampleRate.fraction = 0;
-    setSampleRate(&sampleRate);
 
-    setNumSampleFramesPerBuffer(512);
+    setSampleRate(&sampleRate);
+    setNumSampleFramesPerBuffer(512); // Set buffer size
+
+    IOAudioStream *audioStream = new IOAudioStream;
+    if (!audioStream || !audioStream->initWithAudioEngine(this, kIOAudioStreamDirectionOutput, 1)) {
+        if (audioStream) {
+            audioStream->release();
+        }
+        return false;
+    }
+
+    audioStream->setFormat(&format, false);
+    addAudioStream(audioStream);
+    audioStream->release();
 
     return true;
 }
 
 IOReturn VirtualAudioEngine::performAudioEngineStart() {
+    // Start audio processing
     return kIOReturnSuccess;
 }
 
 IOReturn VirtualAudioEngine::performAudioEngineStop() {
+    // Stop audio processing
     return kIOReturnSuccess;
 }
 
 void VirtualAudioEngine::free() {
+    // Free resources
     super::free();
 }
 
 IOReturn VirtualAudioEngine::resetAudioEngineState() {
+    // Reset the state of the audio engine
     return kIOReturnSuccess;
 }
 
 UInt32 VirtualAudioEngine::getCurrentSampleFrame() {
+    // Return the current sample frame
     return 0;
 }
 
 IOReturn VirtualAudioEngine::clipOutputSamples(const void *mixBuf, void *sampleBuf, UInt32 firstSampleFrame, UInt32 numSampleFrames, const IOAudioStreamFormat *streamFormat) {
+    // Clip output samples before sending to the output device
     return kIOReturnSuccess;
 }
 
 IOReturn VirtualAudioEngine::convertInputSamples(const void *sampleBuf, void *destBuf, UInt32 firstSampleFrame, UInt32 numSampleFrames, const IOAudioStreamFormat *streamFormat) {
+    // Convert input samples before processing by the audio engine
     return kIOReturnSuccess;
 }
 
 extern "C" kern_return_t VirtualAudioDevice_start(IOService *provider) {
     VirtualAudioDevice *audioDevice = new VirtualAudioDevice;
-    if (audioDevice && audioDevice->init(NULL)) {
+    if (audioDevice && audioDevice->init(nullptr)) { // Call init without arguments
         audioDevice->attach(provider);
         audioDevice->start(provider);
         return KERN_SUCCESS;
     }
+
+    if (audioDevice) {
+        audioDevice->release();
+    }
+
     return KERN_FAILURE;
 }
 
 extern "C" void VirtualAudioDevice_stop(IOService *provider) {
-    // Clean up code
+    VirtualAudioDevice *audioDevice = OSDynamicCast(VirtualAudioDevice, IOService::getMatchingServices(IOService::serviceMatching("VirtualAudioDevice")));
+    if (audioDevice) {
+        audioDevice->stop(provider);
+        audioDevice->detach(provider);
+        audioDevice->release();
+    }
 }
