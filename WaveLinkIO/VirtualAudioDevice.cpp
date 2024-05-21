@@ -21,6 +21,11 @@
 //  @LICENSE_HEADER_END@
 //
 
+/**
+ * @file VirtualAudioDevice.cpp
+ * @brief Implementation of the VirtualAudioDevice and VirtualAudioEngine classes.
+ */
+
 #include "VirtualAudioDevice.hpp"
 #include <IOKit/IOLib.h>
 
@@ -67,17 +72,14 @@ bool VirtualAudioEngine::initHardware(IOService *provider) {
 }
 
 IOReturn VirtualAudioEngine::performAudioEngineStart() {
-    // Start audio processing
     return kIOReturnSuccess;
 }
 
 IOReturn VirtualAudioEngine::performAudioEngineStop() {
-    // Stop audio processing
     return kIOReturnSuccess;
 }
 
 void VirtualAudioEngine::free() {
-    // Free resources
     super::free();
 }
 
