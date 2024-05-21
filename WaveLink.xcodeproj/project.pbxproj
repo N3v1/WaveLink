@@ -14,7 +14,37 @@
 		38AAD1E92BFC82A70039F5D6 /* WaveLinkIO.c in Sources */ = {isa = PBXBuildFile; fileRef = 38AAD1E82BFC82A70039F5D6 /* WaveLinkIO.c */; };
 		38AAD1F02BFC8A0A0039F5D6 /* VirtualAudioDevice.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 38AAD1EF2BFC8A0A0039F5D6 /* VirtualAudioDevice.hpp */; };
 		38AAD1F12BFC8A0A0039F5D6 /* VirtualAudioDevice.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 38AAD1EE2BFC8A0A0039F5D6 /* VirtualAudioDevice.cpp */; };
+		38AAD1F32BFC92BB0039F5D6 /* WaveLinkIO.kext in Embed PlugIns */ = {isa = PBXBuildFile; fileRef = 38AAD1E62BFC82A70039F5D6 /* WaveLinkIO.kext */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		38AAD1F92BFC986D0039F5D6 /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38AAD1F72BFC986D0039F5D6 /* AVFAudio.framework */; };
+		38AAD1FA2BFC986D0039F5D6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38AAD1F82BFC986D0039F5D6 /* AudioToolbox.framework */; };
+		38AAD1FE2BFC99260039F5D6 /* CoreAudioKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38AAD1FB2BFC99250039F5D6 /* CoreAudioKit.framework */; };
+		38AAD1FF2BFC99260039F5D6 /* CoreAudioTypes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38AAD1FC2BFC99260039F5D6 /* CoreAudioTypes.framework */; };
+		38AAD2002BFC99260039F5D6 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38AAD1FD2BFC99260039F5D6 /* CoreAudio.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		38AAD1F42BFC92BB0039F5D6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 38AAD1852BFB9A910039F5D6 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 38AAD1E52BFC82A70039F5D6;
+			remoteInfo = WaveLinkIO;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		38AAD1F62BFC92BB0039F5D6 /* Embed PlugIns */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				38AAD1F32BFC92BB0039F5D6 /* WaveLinkIO.kext in Embed PlugIns */,
+			);
+			name = "Embed PlugIns";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		38AAD18D2BFB9A910039F5D6 /* WaveLink.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaveLink.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -28,6 +58,11 @@
 		38AAD1EA2BFC82A70039F5D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38AAD1EE2BFC8A0A0039F5D6 /* VirtualAudioDevice.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = VirtualAudioDevice.cpp; sourceTree = "<group>"; };
 		38AAD1EF2BFC8A0A0039F5D6 /* VirtualAudioDevice.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = VirtualAudioDevice.hpp; sourceTree = "<group>"; };
+		38AAD1F72BFC986D0039F5D6 /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
+		38AAD1F82BFC986D0039F5D6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		38AAD1FB2BFC99250039F5D6 /* CoreAudioKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioKit.framework; path = System/Library/Frameworks/CoreAudioKit.framework; sourceTree = SDKROOT; };
+		38AAD1FC2BFC99260039F5D6 /* CoreAudioTypes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioTypes.framework; path = System/Library/Frameworks/CoreAudioTypes.framework; sourceTree = SDKROOT; };
+		38AAD1FD2BFC99260039F5D6 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +70,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38AAD1FF2BFC99260039F5D6 /* CoreAudioTypes.framework in Frameworks */,
+				38AAD1F92BFC986D0039F5D6 /* AVFAudio.framework in Frameworks */,
+				38AAD1FE2BFC99260039F5D6 /* CoreAudioKit.framework in Frameworks */,
+				38AAD2002BFC99260039F5D6 /* CoreAudio.framework in Frameworks */,
+				38AAD1FA2BFC986D0039F5D6 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +94,7 @@
 				38AAD18F2BFB9A910039F5D6 /* WaveLink */,
 				38AAD1E72BFC82A70039F5D6 /* WaveLinkIO */,
 				38AAD18E2BFB9A910039F5D6 /* Products */,
+				38AAD1F22BFC92BB0039F5D6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -90,11 +131,23 @@
 			isa = PBXGroup;
 			children = (
 				38AAD1E82BFC82A70039F5D6 /* WaveLinkIO.c */,
-				38AAD1EA2BFC82A70039F5D6 /* Info.plist */,
 				38AAD1EE2BFC8A0A0039F5D6 /* VirtualAudioDevice.cpp */,
 				38AAD1EF2BFC8A0A0039F5D6 /* VirtualAudioDevice.hpp */,
+				38AAD1EA2BFC82A70039F5D6 /* Info.plist */,
 			);
 			path = WaveLinkIO;
+			sourceTree = "<group>";
+		};
+		38AAD1F22BFC92BB0039F5D6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38AAD1FD2BFC99260039F5D6 /* CoreAudio.framework */,
+				38AAD1FB2BFC99250039F5D6 /* CoreAudioKit.framework */,
+				38AAD1FC2BFC99260039F5D6 /* CoreAudioTypes.framework */,
+				38AAD1F82BFC986D0039F5D6 /* AudioToolbox.framework */,
+				38AAD1F72BFC986D0039F5D6 /* AVFAudio.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,10 +171,12 @@
 				38AAD1892BFB9A910039F5D6 /* Sources */,
 				38AAD18A2BFB9A910039F5D6 /* Frameworks */,
 				38AAD18B2BFB9A910039F5D6 /* Resources */,
+				38AAD1F62BFC92BB0039F5D6 /* Embed PlugIns */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				38AAD1F52BFC92BB0039F5D6 /* PBXTargetDependency */,
 			);
 			name = WaveLink;
 			productName = WaveLink;
@@ -222,6 +277,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		38AAD1F52BFC92BB0039F5D6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 38AAD1E52BFC82A70039F5D6 /* WaveLinkIO */;
+			targetProxy = 38AAD1F42BFC92BB0039F5D6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		38AAD19A2BFB9A930039F5D6 /* Debug */ = {
@@ -356,6 +419,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WaveLink;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -383,6 +447,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WaveLink;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
